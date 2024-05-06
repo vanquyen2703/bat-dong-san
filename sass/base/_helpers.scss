@@ -1,0 +1,36 @@
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.no-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.font-heading {
+	font-family: var(--font-heading);
+}
+
+.btn {
+	display: inline-block;
+	background: var(--b-btn-bg);
+	color: #fff;
+	font-family: var(--font-heading);
+	font-weight: 700;
+	line-height: 1;
+	padding: 19px 34px;
+	transition: all .2s;
+
+	&:hover {
+		text-decoration: none;
+		opacity: .75;
+	}
+
+	&--secondary {
+		background: #fff;
+		color: var(--color-red);
+	}
+}
