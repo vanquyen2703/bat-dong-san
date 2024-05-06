@@ -2,6 +2,22 @@
 	box-shadow: none;
 }
 
+.container {
+	width: 100%;
+	max-width: var(--container);
+	margin: auto;
+	padding: 0 15px;
+}
+
+.container-fluid {
+	width: 100%;
+	padding: 0 50px;
+
+	@media (max-width:768px) {
+		padding: 0 15px;
+	}
+}
+
 body {
 	max-width: none;
 	padding: 0;
@@ -22,4 +38,3 @@ svg {
 	height: 1em;
 	fill: currentColor;
 }
-
