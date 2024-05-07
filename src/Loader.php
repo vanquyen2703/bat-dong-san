@@ -1,5 +1,5 @@
 <?php
-namespace BDS;
+namespace Flux;
 
 use FluxDigital\Assets;
 

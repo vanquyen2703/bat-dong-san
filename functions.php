@@ -1,5 +1,5 @@
 <?php
-namespace BDS;
+namespace Flux;
 
 use FluxDigital\GoToTop;
 
@@ -10,3 +10,4 @@ new Settings;
 new Fields;
 new Menu;
 new GoToTop;
+new PostType;

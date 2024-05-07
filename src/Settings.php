@@ -1,5 +1,5 @@
 <?php
-namespace BDS;
+namespace Flux;
 
 class Settings
 {
