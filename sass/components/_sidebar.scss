@@ -1,79 +1,232 @@
-.sidebar {
-	--b-link: #16243D;
-
-	.widget {
-		margin-bottom: 30px;
-	}
-
-	.widget-title {
-		margin-top: 0;
-		margin-bottom: 20px;
-	}
+#sidebar {
+	position: relative;
 
 	ul {
-		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
 
-	.widget_categories {
-		background: #fff;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
-		padding: 30px;
+	li {
+		list-style: none;
+	}
+}
+
+.widget {
+	position: relative;
+	margin-bottom: 30px;
+
+	.widget-title {
+		font-size: 20px;
+		color: var(--color-heading);
 		font-family: var(--font-heading);
+		font-weight: 600;
+		margin: 0 0 20px;
+		text-transform: capitalize;
+	}
 
-		a {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding-bottom: 20px;
-			border-bottom: 1px solid var(--b-line);
-			margin-bottom: 20px;
+	li {
+		border-bottom: 1px solid #EFEFEF;
+		padding: 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
 
-			&:after {
-				content: '→';
-				display: block;
-			}
-
-			&:hover {
-				text-decoration: none;
-				opacity: .75;
-			}
+		&:last-child {
+			border-bottom: 0;
+			padding-bottom: 0;
 		}
 
-		li:last-child a {
-			padding-bottom: 0;
-			border-bottom: none;
-			margin-bottom: 0;
+		&:hover {
+			a {
+				color: var(--color-access);
+				text-decoration: none;
+			}
 		}
 	}
 
-	.erp {
-		img {
-			object-fit: cover;
-			width: 139px;
-			height: 78px;
+	&.widget_categories {
+
+		li {
+			color: #4A4A4A;
+			font-size: 14px;
 		}
 
-		&-body a {
+		a {
+			color: var(--color-heading);
+			font-size: 16px;
 			font-family: var(--font-heading);
 			font-weight: 600;
-			color: var(--b-link);
-			line-height: 1.25;
+			line-height: 1.5;
+		}
+	}
+
+	&.widget_nav_menu {
+		a {
+			font-weight: 600;
+		}
+	}
+
+	.search-form {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		border: 1px solid #E3E3E3;
+
+		input {
+			width: calc(100% - 32px) !important;
+			background: none;
 		}
 
-		time {
-			color: #B1B1B1;
-			font-size: 12px;
-			margin-top: 10px;
+		button {
+			background: transparent;
+			order: 1;
+			width: 32px;
+			height: 54px;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-			&:before {
-				content: '◷';
-				display: inline-block;
-				color: inherit;
-				font-size: 14px;
-				margin-right: 6px;
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: var(--color-heading);
 			}
 		}
+	}
+
+	.tagcloud {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+
+		a {
+			text-decoration: none;
+			padding: 12px 16px;
+			border: 1px solid #F0F0F0;
+			font-size: 13px;
+			line-height: 1.4;
+
+			&:hover {
+				background-color: var(--color-access);
+				color: var(--color-heading);
+			}
+		}
+	}
+
+	.subscription-input {
+		position: relative;
+		display: flex;
+		border: 1px solid #E3E3E3;
+		padding: 8.5px 18px;
+
+		input {
+			background: transparent;
+			font-size: 14px;
+			color: #4A4A4A;
+			padding: 0;
+		}
+
+		button {
+			background: transparent;
+
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}
+
+.news-sidebar {
+	&__item {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		border-bottom: 1px solid #EFEFEF;
+		padding: 15px 0;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+	}
+
+	.entry-thumbnail {
+		width: 112px;
+		position: relative;
+		overflow: hidden;
+		border-radius: 10px;
+
+		&::after {
+			content: '';
+			display: block;
+			padding-bottom: 71%;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.entry-content {
+		width: calc(100% - 112px);
+		padding-left: 12px;
+
+		a {
+			font-size: 16px;
+			color: var(--color-heading);
+			margin: 0 0 10px;
+			font-weight: 500;
+			font-family: var(--font-heading);
+			line-height: 1.2;
+			@include set-line(2);
+
+
+			&:hover {
+				color: var(--color-accent);
+				text-decoration: none;
+			}
+		}
+	}
+
+	.entry-date {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px;
+		margin-top: 10px;
+
+		p {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			font-size: 16px;
+			margin: 0;
+			font-weight: 600;
+			font-family: var(--font-heading);
+
+			svg {
+				width: 12px;
+				height: 12px;
+				fill: #999;
+				margin-right: 5px;
+			}
+
+			a {
+				margin: 0;
+				font-weight: 600;
+				font-size: 14px;
+			}
+		}
+
 	}
 }

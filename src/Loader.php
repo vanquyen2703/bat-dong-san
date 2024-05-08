@@ -41,6 +41,7 @@ class Loader
 				'after_title' => '</h3>',
 			]
 		);
+		// register_widget('\Flux\Widgets\RecentPosts');
 	}
 
 	public function enqueue_assets()
@@ -56,5 +57,11 @@ class Loader
 
 		// Thêm style cho template
 		// Assets::template_css( 'page-templates/home-page.php', 'home' );
+		if (is_singular('post')) {
+			Assets::css('single', true);
+		}
+		if (is_home() || is_archive() || is_search()) {
+			Assets::css('archive', true);
+		}
 	}
 }

@@ -1,0 +1,35 @@
+.nav-links {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination {
+    padding-top: 50px;
+
+    .screen-reader-text {
+        display: none;
+    }
+}
+
+.page-numbers {
+    border: 1px solid #EFEFEF;
+    padding: 10px 15px;
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    line-height: 1;
+
+    &:hover,
+    &.current {
+        background-color: var(--color-access);
+        border: 1px solid var(--color-access);
+        color: var(--color-white);
+        text-decoration: none;
+    }
+
+}

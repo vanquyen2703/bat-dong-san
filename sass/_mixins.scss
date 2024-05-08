@@ -1,0 +1,53 @@
+@mixin setimg($number) {
+    .entry-thumbnail {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            padding-top: #{$number};
+        }
+
+        img {
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            object-fit: cover;
+        }
+    }
+}
+
+@mixin absolute-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin set-line($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: #{$line};
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin set-thumbnail($number) {
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        padding-bottom: $number;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
