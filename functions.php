@@ -11,3 +11,5 @@ new Fields;
 new Menu;
 new GoToTop;
 new PostType;
+new RemoveCate;
+

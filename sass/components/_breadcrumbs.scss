@@ -1,0 +1,18 @@
+#breadcrumbs {
+    padding: 16px 0;
+
+    a {
+        color: var(--color-main);
+        font-weight: 600;
+        font-size: 15px;
+
+        &:hover {
+            text-decoration: none;
+            opacity: 0.8;
+        }
+    }
+
+    span {
+        color: var(--color-heading);
+    }
+}

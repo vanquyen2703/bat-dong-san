@@ -2,6 +2,11 @@
     &__top {
         &--logo {
             width: 20%;
+
+            img {
+                width: 100%;
+                display: block;
+            }
         }
 
         &--contact {

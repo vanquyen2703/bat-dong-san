@@ -17,12 +17,12 @@
 				<div class="header__wrapper">
 					<div class="header__top--logo">
 					<?php if (is_front_page()) { ?>
-																													<h1 alt="<?php bloginfo('description'); ?>">
-																														<?php the_custom_logo(); ?>
-																													</h1>
-																													<?php
-					} else { ?>
-																														<?php the_custom_logo(); ?>
+					<h1 alt="<?php bloginfo('description'); ?>">
+						<?php the_custom_logo(); ?>
+					</h1>
+					<?php
+} else { ?>
+						<?php the_custom_logo(); ?>
 					<?php } ?>
 				</div>
 				<div class="header__top--contact">

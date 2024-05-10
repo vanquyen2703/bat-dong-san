@@ -1,0 +1,116 @@
+.alignleft {
+    float: left;
+    margin-right: 1em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1em;
+}
+
+.aligncenter {
+    clear: both;
+    margin-inline: auto;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+.single__bds {
+    &--wrap {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &--gallery {
+        margin-bottom: 24px;
+
+        img {
+            width: 100%;
+        }
+
+        ul {
+            li {
+                img {
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &--content {
+        width: 100%;
+        position: relative;
+        flex: 0 0 70%;
+        padding-right: 15px;
+        overflow: hidden;
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            line-height: 1.2;
+            color: var(--color-heading);
+            margin: 0 0 10px;
+        }
+
+        a {
+            color: var(--color-orange);
+
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    &--sidebar {
+        position: relative;
+        flex: 0 0 30%;
+        padding-left: 15px;
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &--info {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            list-style: none;
+            padding: 0;
+
+            li {
+                border: 1px solid #ddd;
+                margin-left: -1px;
+                margin-bottom: -1px;
+                padding: 8px 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(5) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
