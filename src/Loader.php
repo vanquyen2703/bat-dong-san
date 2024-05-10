@@ -18,7 +18,9 @@ class Loader
 		load_theme_textdomain('bat-dong-san', get_template_directory() . '/languages');
 
 		register_nav_menus([
-			'primary' => esc_html__('Primary Menu', 'bat-dong-san'),
+			'primary'  => esc_html__('Primary Menu', 'bat-dong-san'),
+			'footer-1' => esc_html__('Footer 1', 'bat-dong-san'),
+			'footer-2' => esc_html__('Footer 2', 'bat-dong-san'),
 		]);
 
 		add_theme_support('automatic-feed-links');
@@ -34,13 +36,33 @@ class Loader
 	{
 		register_sidebar(
 			[
-				'name' => esc_html__('Sidebar', 'bat-dong-san'),
-				'id' => 'sidebar-1',
+				'name'          => esc_html__('Sidebar', 'bat-dong-san'),
+				'id'            => 'sidebar-1',
 				'before_widget' => '<aside class="widget %2$s">',
-				'after_widget' => '</aside>',
-				'before_title' => '<h3 class="widget-title">',
-				'after_title' => '</h3>',
-			]
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			],
+		);
+		register_sidebar(
+			[
+				'name'          => esc_html__('Footer 1', 'jymec_theme'),
+				'id'            => 'footer-1',
+				'before_widget' => '<aside class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
+			],
+		);
+		register_sidebar(
+			[
+				'name'          => esc_html__('Footer 2', 'jymec_theme'),
+				'id'            => 'footer-2',
+				'before_widget' => '<aside class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
+			],
 		);
 		// register_widget('\Flux\Widgets\RecentPosts');
 	}

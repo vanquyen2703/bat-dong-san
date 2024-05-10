@@ -1,6 +1,4 @@
 jQuery(function ($) {
-	let $window = window,
-		$body = $('body');
 
 	function slickSlide() {
 		$('.new-home__inner').slick({
@@ -29,37 +27,65 @@ jQuery(function ($) {
 	};
 
 	function toggleMenu() {
-		const search = document.querySelector('.search-open'),
-			search_form = document.querySelector('.header-search__form'),
-			menu_toggle = document.querySelector('.toggle-menu'),
-			view_menu = document.querySelector('.nav'),
-			bg = document.querySelector('.bgDart');
-		close_menu = document.querySelector('.close-menu');
-		body = document.querySelector('body');
+		const menu_toggle = document.querySelector('.toggle-menu');
+		const view_menu = document.querySelector('.nav');
+		const close_menu = document.querySelector('.close-menu');
+		const body = document.querySelector('body');
 
-		search.addEventListener('click', () => {
-			search_form.classList.toggle('header-search__open');
-			bg.classList.toggle('open');
-		});
 		menu_toggle.addEventListener('click', () => {
 			view_menu.classList.toggle('open');
-			bg.classList.toggle('open');
-			search_form.classList.remove('header-search__open');
-			body.classList.toggle('menu-open');
+			body.classList.toggle('menu-open'); 
 			menu_toggle.classList.toggle('icon_close');
 		});
+
 		body.addEventListener('click', (event) => {
 			const isClickInsideMenu = view_menu.contains(event.target);
 			const isClickInsideMenuToggle = menu_toggle.contains(event.target);
 			if (!isClickInsideMenu && !isClickInsideMenuToggle) {
 				view_menu.classList.remove('open');
-				bg.classList.remove('open');
-				body.classList.remove('menu-open');
-				menu_toggle.classList.toggle('icon_close');
+				body.classList.remove('menu-open'); 
+				menu_toggle.classList.remove('icon_close');
 			}
 		});
 	}
 
+	function toggleSubmenu() {
+		const nav = document.querySelector( '.nav' );
+		if ( !nav ) {
+			return;
+		}
+
+		const buttons = [ ...nav.querySelectorAll( '.sub-menu-toggle' ) ];
+
+		buttons.forEach( button => {
+			button.addEventListener( 'click', e => {
+				e.preventDefault();
+				const a = button.previousElementSibling, li = a.closest( 'li' );
+				if ( li.classList.contains( 'is-open' ) ) {
+					button.setAttribute( 'aria-expanded', 'false' );
+					a.setAttribute( 'aria-expanded', 'false' );
+				} else {
+					button.setAttribute( 'aria-expanded', 'true' );
+					a.setAttribute( 'aria-expanded', 'true' );
+				}
+				li.classList.toggle( 'is-open' );
+			} );
+		} );
+
+		function closeOtherSubmenus( allButtons, currentButton ) {
+			allButtons.forEach( otherButton => {
+				if ( otherButton !== currentButton ) {
+					const otherA = otherButton.previousElementSibling,
+						otherLi = otherA.closest( 'li' );
+					otherButton.setAttribute( 'aria-expanded', 'false' );
+					otherA.setAttribute( 'aria-expanded', 'false' );
+					otherLi.classList.remove( 'is-open' );
+				}
+			} );
+		}
+	}
+
 	// slickSlide();
 	toggleMenu();
+	toggleSubmenu()
 });

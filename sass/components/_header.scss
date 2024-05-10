@@ -1,8 +1,17 @@
 .header {
     &__top {
+        &__menubar{
+            display: none;
+            width: 10%;
+            @media (max-width: 991px) {
+               display: block;
+            }
+        }
         &--logo {
             width: 20%;
-
+            @media (max-width: 991px) {
+                width: 30%;
+             }
             img {
                 width: 100%;
                 display: block;
@@ -15,7 +24,6 @@
             align-items: center;
             justify-content: flex-end;
             gap: 16px;
-
             a {
                 display: block;
 
@@ -28,7 +36,9 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
-
+                @media (max-width: 768px) {
+                    display: none;
+                }
                 svg {
                     width: 24px;
                     height: 24px;

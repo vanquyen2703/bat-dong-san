@@ -1,9 +1,11 @@
 .footer {
-
+	background-color: var(--color-background);
+	
 
 	&__columns {
 		display: flex;
 		flex-wrap: nowrap;
+		padding: 60px 0 30px 0;
 	}
 
 	&__left {
@@ -14,6 +16,34 @@
 				display: block;
 				width: 100%;
 				max-width: 200px;
+			}
+		}
+		.social-icons {
+			margin-top: 30px;
+			font-size: 20px;
+			gap: 12px;
+			padding: 12px;
+			color: var(--color-heading);
+			justify-content: flex-start;
+			gap: 12px;
+			a {
+				width: 50px;
+				height: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 1px solid var(--color-main);
+				border-radius: 50%;
+				color: var(--color-main);
+			}
+			svg {
+				display: block;
+				width: 24px;
+				height: 24px;
+				fill:var(--color-main);
+				path{
+					fill:var(--color-main);
+				}
 			}
 		}
 	}
@@ -31,7 +61,7 @@
 				display: flex;
 				align-items: center;
 				gap: 16px;
-
+				width: calc((100% - 32px) / 3);
 				svg {
 					width: 32px;
 					height: 32px;
@@ -58,6 +88,72 @@
 				}
 			}
 		}
+		&--bottom{
+			display: flex;
+			gap: 16px;
+			margin-top: 30px;
+			.column-item{
+				width: calc((100% - 32px) / 3);
+				h3{
+					font-size: 14px;
+					line-height: 1.2;
+					margin: 0 0 20px 0;
+				}
+				ul{
+					list-style: none;
+					padding: 0;
+					li{
+						margin-bottom: 12px;
+						a{	
+							font-size: 14px;
+							line-height: 20px;
+							color: var(--color-heading);
+							&:hover{
+								color: var(--color-main);
+								text-decoration: none;
+							}
+						}
+						
+					}
+				}
+				.ff-t-container{
+					position: relative;
+					.ff-t-column-1{
+						position: relative;
+						width: 100%;
+						flex-basis: 100% !important;
+						.ff-el-form-control{
+							padding: 16px 25% 16px 10px;
+						}
+					}
+					.ff-t-column-2{
+						position: absolute;
+						flex-basis: 25% !important;
+						right: 0;
+						width: 25%;
+						height: 100%;
+						align-items: center;
+    					justify-content: center;
+						.ff-btn-submit{
+							margin: 0;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							padding: 12px;
+							svg{
+
+								path {
+									fill: hsla(11, 100%, 62.2%, 1) !important;
+								}
+							} 
+						}
+					}
+					.ff-el-group{
+						margin: 0;
+					}
+				}
+			}
+		}
 
 	}
 
@@ -65,6 +161,14 @@
 		text-align: center;
 		font-size: 14px;
 		padding: 12px;
+		.hr {
+			display: block;
+			background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-main), rgba(255, 255, 255, 0));
+			opacity: .1;
+			height: 1px;
+			border: none;
+			margin-bottom: 15px;
+		}
 	}
 
 	.social-button {
