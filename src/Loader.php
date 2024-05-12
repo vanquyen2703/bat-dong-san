@@ -71,6 +71,7 @@ class Loader
 	{
 		wp_enqueue_style('bat-dong-san', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
 		Assets::js('script', ['jquery']);
+		Assets::js('filter', ['jquery'], ['url' => admin_url('admin-ajax.php')]);
 
 		// Thêm style cho template
 		if (is_front_page()) {
