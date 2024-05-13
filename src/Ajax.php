@@ -8,10 +8,10 @@ class Ajax {
 	}
 
 	public function display_district() {
-		if ( empty( $_POST[ 'city' ] ) ) {
+		if ( empty( $_POST['city'] ) ) {
 			wp_send_json_error();
 		}
-		$city_id   = $_POST[ 'city' ];
+		$city_id   = $_POST['city'];
 		$districts = get_terms( [ 
 			'taxonomy'   => 'dia-diem',
 			'hide_empty' => false,

@@ -1,11 +1,9 @@
 <?php
 namespace FluxDigital;
 
-class Icon
-{
-	public static function output( string $name ): void
-	{
-		$icons = [
+class Icon {
+	public static function output( string $name ): void {
+		$icons = [ 
 			'menu'         => '<svg xmlns="http://www.w3.org/2000/svg" class="menu" width="40" height="40" viewBox="0 0 1536 1280"><path fill="#222222" d="M1536 1088v128q0 26-19 45t-45 19H64q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45m0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 704V576q0-26 19-45t45-19h1408q26 0 45 19t19 45m0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 192V64q0-26 19-45T64 0h1408q26 0 45 19t19 45"></path></svg>',
 			'close'        => '<svg xmlns="http://www.w3.org/2000/svg" class="close" width="40" height="40" viewBox="0 0 16 16"><path fill="#222222" d="M15.1 3.1L12.9.9L8 5.9L3.1.9L.9 3.1l5 4.9l-5 4.9l2.2 2.2l4.9-5l4.9 5l2.2-2.2l-5-4.9z"></path></svg>',
 			'folder'       => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5h-8.586L9.707 3.293A.997.997 0 0 0 9 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zM4 19V7h16l.002 12H4z"></path></svg>',
@@ -37,11 +35,10 @@ class Icon
 			'youtube'      => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"></path></svg>',
 			'tiktok'       => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>',
 		];
-		echo $icons[$name];
+		echo $icons[ $name ];
 	}
 
-	public static function load( string $file_name ): string
-	{
-		return file_get_contents(get_template_directory() . "/images/$file_name.svg");
+	public static function load( string $file_name ): string {
+		return file_get_contents( get_template_directory() . "/images/$file_name.svg" );
 	}
 }

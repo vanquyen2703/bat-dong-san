@@ -25,9 +25,9 @@ class RecentPosts extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$instance = wp_parse_args( $instance, $this->defaults );
-		$titlewd  = apply_filters( 'widget_title', $instance[ 'title' ] );
-		$id       = apply_filters( 'widget_id', $instance[ 'id' ] );
-		$args     = [
+		$titlewd  = apply_filters( 'widget_title', $instance['title'] );
+		$id       = apply_filters( 'widget_id', $instance['id'] );
+		$args     = [ 
 			'post_type'      => 'post',
 			'posts_per_page' => 3,
 			'post_status'    => 'publish',
@@ -61,8 +61,8 @@ class RecentPosts extends \WP_Widget {
 								<div class="entry-date">
 									<p class="folder">
 										<?php Icon::output( 'folder' ); ?>
-										<a href="<?= get_category_link( $categories[ 0 ]->term_id ); ?>">
-											<?= esc_html( $categories[ 0 ]->cat_name ); ?>
+										<a href="<?= get_category_link( $categories[0]->term_id ); ?>">
+											<?= esc_html( $categories[0]->cat_name ); ?>
 										</a>
 									</p>
 								</div>
@@ -87,9 +87,9 @@ class RecentPosts extends \WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance           = $old_instance;
-		$instance[ 'title' ]  = sanitize_text_field( $new_instance[ 'title' ] );
-		$instance[ 'number' ] = absint( $new_instance[ 'number' ] );
-		$instance[ 'id' ]     = absint( $new_instance[ 'id' ] );
+		$instance['title']  = sanitize_text_field( $new_instance['title'] );
+		$instance['number'] = absint( $new_instance['number'] );
+		$instance['id']     = absint( $new_instance['id'] );
 		return $instance;
 	}
 
@@ -109,7 +109,7 @@ class RecentPosts extends \WP_Widget {
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-				value="<?php echo esc_attr( $instance[ 'title' ] ); ?>">
+				value="<?php echo esc_attr( $instance['title'] ); ?>">
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>">
@@ -117,7 +117,7 @@ class RecentPosts extends \WP_Widget {
 			</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>"
-				value="<?php echo absint( $instance[ 'id' ] ); ?>">
+				value="<?php echo absint( $instance['id'] ); ?>">
 		</p>
 		<?php
 	}
