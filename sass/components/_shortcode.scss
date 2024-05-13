@@ -1,0 +1,36 @@
+.text-search{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    input{
+        padding: 16px 12px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .btn-search{
+        background-color: var(--color-main);
+        width: 25%;
+
+    }
+}
+.box-select{
+    display: flex;
+    gap: 10px;
+    
+    @media (max-width:991px) {
+        overflow-x: scroll;
+    }
+    select , input{
+        width: 100%;
+        color: #4a4a4a;
+        font-size: 14px;
+        padding: 16px 12px;
+        line-height: 1.4;
+        
+        @media (max-width:991px) {
+            min-width: 120px;
+            font-size: 12px;
+            padding: 12px 10px;
+        }
+    }
+}

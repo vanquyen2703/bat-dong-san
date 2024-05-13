@@ -1,5 +1,5 @@
 <?php
-namespace FluxDigital;
+namespace Flux;
 
 class Icon
 {
