@@ -87,48 +87,48 @@ class Shortcode {
 
 	public function process_search( $query ) {
 		if ( $query->is_search && ! is_admin() ) {
-			if ( isset( $_GET[ 's' ] ) ) {
-				$query->set( 'post_type', [ $_GET[ 'nha_dat' ] ] );
+			if ( isset( $_GET['s'] ) ) {
+				$query->set( 'post_type', [ $_GET['nha_dat'] ] );
 			}
 			if ( $query->is_main_query() ) {
 				$args[] = array( 'relation' => 'AND' );
-				if ( isset( $_GET[ 'loai_nha_dat' ] ) && $_GET[ 'loai_nha_dat' ] != 'all' ) {
+				if ( isset( $_GET['loai_nha_dat'] ) && $_GET['loai_nha_dat'] != 'all' ) {
 					$args[] = [ 
 						'taxonomy' => 'danh-muc-nha-dat',
 						'field'    => 'slug',
-						'terms'    => $_GET[ 'loai_nha_dat' ],
+						'terms'    => $_GET['loai_nha_dat'],
 					];
 				}
-				if ( isset( $_GET[ 'city' ] ) && $_GET[ 'city' ] != 'all' && $_GET[ 'districts' ] == 'all' ) {
+				if ( isset( $_GET['city'] ) && $_GET['city'] != 'all' && $_GET['districts'] == 'all' ) {
 					$args[] = [ 
 						'taxonomy' => 'dia-diem',
 						'field'    => 'slug',
-						'terms'    => $_GET[ 'city' ],
+						'terms'    => $_GET['city'],
 					];
 				}
-				if ( isset( $_GET[ 'districts' ] ) && $_GET[ 'districts' ] != 'all' ) {
+				if ( isset( $_GET['districts'] ) && $_GET['districts'] != 'all' ) {
 					$args[] = [ 
 						'taxonomy' => 'dia-diem',
 						'field'    => 'slug',
-						'terms'    => $_GET[ 'districts' ],
+						'terms'    => $_GET['districts'],
 					];
 				}
-				if ( isset( $_GET[ 'dien_tich' ] ) && $_GET[ 'dien_tich' ] != 'all' ) {
+				if ( isset( $_GET['dien_tich'] ) && $_GET['dien_tich'] != 'all' ) {
 					$args[] = [ 
 						'taxonomy' => 'dien-tich',
 						'field'    => 'slug',
-						'terms'    => $_GET[ 'dien_tich' ],
+						'terms'    => $_GET['dien_tich'],
 					];
 				}
-				if ( isset( $_GET[ 'gia' ] ) && $_GET[ 'gia' ] != 'all' ) {
+				if ( isset( $_GET['gia'] ) && $_GET['gia'] != 'all' ) {
 					$args[] = [ 
 						'taxonomy' => 'gia',
 						'field'    => 'slug',
-						'terms'    => $_GET[ 'gia' ],
+						'terms'    => $_GET['gia'],
 					];
 				}
 				$query->set( 'tax_query', $args );
-				$query->set( 'post_type', [ $_GET[ 'nha_dat' ] ] );
+				$query->set( 'post_type', [ $_GET['nha_dat'] ] );
 			}
 		}
 		return $query;
