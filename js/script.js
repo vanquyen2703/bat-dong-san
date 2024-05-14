@@ -86,7 +86,7 @@ jQuery(function ($) {
 	}
 
 	function tabFilter(){
-		$('.tabs-stage div').hide();
+		$('.tabs-stage .tab-item').hide();
 		$('.tabs-stage div:first').show();
 		$('.tabs-nav li:first').addClass('tab-active');
 	
@@ -94,7 +94,7 @@ jQuery(function ($) {
 		  event.preventDefault();
 		  $('.tabs-nav li').removeClass('tab-active');
 		  $(this).parent().addClass('tab-active');
-		  $('.tabs-stage div').hide();
+		  $('.tabs-stage .tab-item').hide();
 		  $($(this).attr('href')).show();
 		});
 	}

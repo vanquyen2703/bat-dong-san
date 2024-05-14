@@ -1,0 +1,71 @@
+.filter-form {
+	position: relative;
+
+	.title-widget {
+		margin-top: 0;
+		margin-bottom: 20px;
+		color: #1d2128;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: capitalize;
+	}
+
+	label {
+		display: block;
+		position: relative;
+		padding-left: 25px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 16px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
+
+			&:checked~.checkmark {
+				background-color: #2196F3;
+			}
+
+			&:checked~.checkmark:after {
+				display: block;
+			}
+		}
+
+		.checkmark {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			height: 15px;
+			width: 15px;
+			background-color: #eee;
+
+			&:after {
+				content: "";
+				position: absolute;
+				display: none;
+				left: 5px;
+				top: 3px;
+				width: 5px;
+				height: 10px;
+				border: solid white;
+				border-width: 0 3px 3px 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+
+		&:hover {
+			input~.checkmark {
+				background-color: #ccc;
+			}
+		}
+	}
+}

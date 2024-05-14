@@ -67,20 +67,117 @@
     }
 }
 
+.property{
+	padding: 60px 0;
+
+	.list-cate{
+		list-style: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		margin: 0 0 16px 0;
+		@media (max-width:768px) {
+			display: none;
+		}
+		li{
+			a{
+				text-transform: capitalize;
+				font-weight: 600;
+				text-decoration: none;
+			}
+			&:hover{
+				a{
+					color: var(--color-main);
+				}
+			}
+		}
+	}
+	&__wrap{
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		grid-gap:20px;
+		@media (max-width:1024px) {
+			grid-template-columns: repeat(3,1fr);
+		}
+		@media (max-width:768px) {
+			grid-gap:16px;
+			grid-template-columns: repeat(2,1fr);
+		}
+	}
+	.bds-post{
+		box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .1);
+		border: 1px solid rgba(151, 151, 151, .3);
+		border-radius: 6px;
+		overflow: hidden;
+		&:hover{
+			img{
+				transform: scale(1.1);
+			}
+		}
+		.entry-thumbnail{
+			overflow: hidden;
+			img{
+				aspect-ratio: 4/3;
+				object-fit: cover;
+				display: block;
+				transition: 0.5s;
+			}
+			
+		}
+		.entry-content{
+			padding: 12px 12px 20px 12px;
+			h3{
+				margin: 0 0 12px 0;
+				font-family: var(--font-heading);
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 1.2;
+				color: var(--color-heading);
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;  
+				overflow: hidden;
+				@media (max-width:768px) {
+					-webkit-line-clamp: 3;
+				}
+				a{
+					color: var(--color-main);
+					text-decoration: none;
+				}
+			}
+			.info-bds{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				.info-item{
+					display: flex;
+					gap: 4px;
+					align-items: center;
+					&.price{
+						font-size: 18px;
+						font-weight: 600;
+						color: var(--color-black);
+					}
+					svg{
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+		
+		
+		
+	}
+}
+
 .news {
 	position: relative;
 	padding: 0px 0 90px;
 
 	h2 {
-		font-family: var(--font-heading);
-		font-size: 40px;
 		text-align: center;
-		margin: 0 0 40px;
-		color: var(--color-heading);
-		font-weight: 600;
-        @media (max-width:768px) {
-            font-size: 32px;
-        }
 	}
 
 	&__wrap {

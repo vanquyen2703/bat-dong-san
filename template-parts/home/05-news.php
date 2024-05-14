@@ -1,6 +1,6 @@
 <?php
 
-$news = get_field('tin_tức');
+$news = get_field('tieu_de_tin_tuc');
 $query = new WP_Query(
     array(
         'posts_per_page' => 5,
@@ -16,7 +16,7 @@ if (!$query->have_posts()) {
 ?>
 <section class="news">
     <div class="container">
-        <h2>
+        <h2 class="section-heading">
             <?= esc_html($news['tieu_de']); ?>
         </h2>
         <div class="news__wrap">

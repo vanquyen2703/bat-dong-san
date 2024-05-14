@@ -1,34 +1,42 @@
 <?php get_header(); ?>
 
-<?php
-$categories = get_terms( [ 
-	'taxonomy'   => 'danh-muc-nha-dat',
-	'hide_empty' => false,
-	'parent'     => 0,
-	'meta_key'   => 'order',
-	'orderby'    => 'meta_value_num',
-] );
-?>
-<section class="list-product">
-	<div class="container list-product__wrap">
-		<?php foreach ( $categories as $category ) :
-			?>
-			<div class="list-product__item">
-				<div class="list-product__thumbnail">
-					<a href="<?= esc_url( get_category_link( $category->term_id ) ); ?>">
-						<img alt="<?= esc_attr( $category->name ); ?>"
-							src="<?= wp_get_attachment_image_url( $images['ID'], [ 540 * 2, 506 * 2 ] ); ?>" width="540"
-							height="506" loading="lazy">
-					</a>
-				</div>
-				<h2><a href="<?= esc_url( get_category_link( $category->term_id ) ); ?>">
-						<?= esc_html( $category->name ); ?>
-					</a></h2>
-				<p class="desc">
-					<?= esc_html( $category->description ); ?>
-				</p>
+<section class="archive-bds">
+		<?php
+		get_template_part('template-parts/archive/breadcrumbs');
+		?>
+	<div class="container">
+		
+		<div class="list-bds__wrap" id="list-store">
+			<div class="list-bds__sidebar">
+			<?php dynamic_sidebar('sidebar-2') ?>
 			</div>
-		<?php endforeach; ?>
+			<div class="list-bds__content">
+				<div class="list-bds__order">
+					<?php do_action('haston_ordering'); ?>
+				</div>
+				<?php
+				if (have_posts()): ?>
+															<div class="list-bds__show grid-view">
+																<?php
+																while (have_posts()) {
+																	the_post();
+																	get_template_part('template-parts/content', 'bds');
+																}
+																?>
+															</div>
+															<?php the_posts_pagination(
+																[
+																	'mid_size'  => 1,
+																	'prev_text' => __('<', 'haston'),
+																	'next_text' => __('>', 'haston'),
+																],
+															); ?>
+			<?php else: ?>
+																<?php get_template_part('template-parts/content/none'); ?>
+			<?php endif; ?>
+			</div>
+			
+		</div>
 	</div>
 </section>
 
