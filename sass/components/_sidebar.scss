@@ -32,6 +32,12 @@
 		align-items: center;
 		justify-content: space-between;
 
+		a {
+			display: block;
+			width: 100%;
+			color: var(--color-heading);
+		}
+
 		&:last-child {
 			border-bottom: 0;
 			padding-bottom: 0;
@@ -39,7 +45,7 @@
 
 		&:hover {
 			a {
-				color: var(--color-access);
+				color: var(--color-main);
 				text-decoration: none;
 			}
 		}
@@ -58,6 +64,7 @@
 			font-family: var(--font-heading);
 			font-weight: 600;
 			line-height: 1.5;
+			width: auto;
 		}
 	}
 

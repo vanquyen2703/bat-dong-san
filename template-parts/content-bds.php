@@ -37,18 +37,19 @@ $category = array_unique( $category );
 				<?php the_title(); ?>
 			</a>
 		</h3>
+		<p class="excerpt"><?php echo get_the_excerpt( $post_id ); ?></p>
 		<div class="info-bds">
-			<?php if ( ! empty( $info_bds['gia'] ) ) : ?>
-				<div class="info-item price">
-					<?php Flux\Icon::output( 'money' ) ?>
-					<?php echo esc_html( $info_bds['gia'] ); ?>
-				</div>
+			<?php if ( ! empty( $info_bds[ 'gia' ] ) ) : ?>
+					<div class="info-item price">
+						<?php Flux\Icon::output( 'money' ) ?>
+						<?php echo esc_html( $info_bds[ 'gia' ] ); ?>
+					</div>
 			<?php endif; ?>
-			<?php if ( ! empty( $info_bds['dien_tich'] ) ) : ?>
-				<div class="info-item area">
-					<?php Flux\Icon::output( 'acreage' ) ?>
-					<?php echo esc_html( $info_bds['dien_tich'] ); ?>
-				</div>
+			<?php if ( ! empty( $info_bds[ 'dien_tich' ] ) ) : ?>
+					<div class="info-item area">
+						<?php Flux\Icon::output( 'acreage' ) ?>
+						<?php echo esc_html( $info_bds[ 'dien_tich' ] ); ?>
+					</div>
 			<?php endif; ?>
 		</div>
 	</div>

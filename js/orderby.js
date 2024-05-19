@@ -68,17 +68,17 @@ jQuery( function ( $ ) {
 
 		// loop over the selected filter name -> (array) values pairs
 		$.each( selectedFilters, function ( name, filterValues ) {
-			console.log( filterValues );
+			// console.log( filterValues );
 			// filter each .flower element
 			$filteredResults = $filteredResults.filter( function () {
 
 				var matched = false,
 					currentFilterValues = $( this ).data( 'category' ).split( ' ' );
-				    console.log( currentFilterValues );
+				    // console.log( currentFilterValues );
 
 				// loop over each category value in the current .flower's data-category
 				$.each( currentFilterValues, function ( _, currentFilterValue ) {
-					console.log( currentFilterValue );
+					// console.log( currentFilterValue );
 					if ( $.inArray( currentFilterValue, filterValues ) != -1 ) {
 						matched = true;
 						return false;
@@ -92,7 +92,7 @@ jQuery( function ( $ ) {
 		$( '.bds-post' ).hide().filter( $filteredResults ).show();
 	};
 
-	$filterCheckboxes.on( 'change', filterFunc );
+	// $filterCheckboxes.on( 'change', filterFunc );
 
 	orderBy();
 	grid_product();

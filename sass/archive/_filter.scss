@@ -1,6 +1,66 @@
 .filter-form {
 	position: relative;
 
+	ul.danh_muc {
+		position: relative;
+		padding: 0;
+		margin: 0;
+
+		li {
+			list-style: none;
+			margin-bottom: 12px;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			&:hover {
+				.checkmark {
+					background-color: #ccc;
+				}
+			}
+
+			&.active {
+				.checkmark {
+					background-color: #2196f3;
+
+					&::after {
+						display: block;
+					}
+				}
+			}
+
+			.checkmark {
+				top: 5px;
+				left: 0;
+				height: 15px;
+				width: 15px;
+				background-color: #eee;
+
+				&:after {
+					content: "";
+					position: absolute;
+					display: none;
+					left: 5px;
+					top: 6px;
+					width: 5px;
+					height: 10px;
+					border: solid white;
+					border-width: 0 3px 3px 0;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		a {
+			width: calc(100% - 15px);
+			color: var(--b-txt);
+			text-decoration: none;
+			padding-left: 10px;
+		}
+	}
+	
 	.title-widget {
 		margin-top: 0;
 		margin-bottom: 20px;

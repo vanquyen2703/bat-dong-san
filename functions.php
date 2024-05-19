@@ -11,6 +11,7 @@ new Menu;
 new GoToTop;
 new PostType;
 // new Widgets;
+new Customizer;
 new RemoveCate;
 new Shortcode;
 new Ajax;

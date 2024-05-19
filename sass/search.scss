@@ -1,0 +1,48 @@
+.search {
+	.list-product__wrap {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.entries {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 20px;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 20px;
+		}
+
+		@media (max-width: 768px) {
+			grid-gap: 16px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.title-search {
+		font-size: 18px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		align-items: center;
+
+		span {
+			font-size: 16px;
+			line-height: 1.4;
+			padding: 10px 16px;
+			background: #ddd;
+			border-radius: 20px;
+			font-weight: 400;
+			display: inline-block;
+		}
+	}
+
+	.bds-post {
+		.entry-content {
+			.excerpt {
+				display: none;
+			}
+		}
+	}
+}

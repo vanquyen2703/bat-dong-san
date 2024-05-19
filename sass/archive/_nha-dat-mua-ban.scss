@@ -1,19 +1,45 @@
-.list-bds{
-    &__wrap{
-        display: flex;
+.list-bds {
 
-    }
-    &__sidebar{
-        flex: 0 0 23%;
-    }
-    &__content{
-        flex: 0 0 calc(77% - 20px);
-        border-left: 1px solid #eee;
-        padding-left: 20px;
-        position: relative;
-        overflow: hidden;
-    }
-    &__order {
+	&__wrap {
+		margin-top: 24px;
+		padding-top: 24px;
+		border-top: 1px solid #ddd;
+		display: flex;
+	}
+
+	&__sidebar {
+		flex: 0 0 23%;
+
+		.taxonomy {
+			&-wrapper {
+				border: 1px solid #eee;
+				border-radius: 8px;
+				padding: 15px;
+				margin-bottom: 16px;
+
+				ul {
+					list-style: none;
+					padding-left: 0;
+					margin: 0;
+				}
+			}
+
+			&-title {
+				font-size: 18px;
+				line-height: 1.2;
+				margin: 0 0 20px 0;
+			}
+		}
+	}
+
+	&__content {
+		flex: 0 0 calc(77% - 20px);
+		padding-left: 20px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__order {
 		position: relative;
 		margin-bottom: 30px;
 		align-items: center;
@@ -21,7 +47,7 @@
 		select#orderby {
 			width: auto;
 			background-color: var(--color-white);
-            line-height: 1.4;
+			line-height: 1.4;
 		}
 
 		.select-wrap {
@@ -44,15 +70,17 @@
 				background: none;
 				padding: 0;
 				line-height: 1;
-                padding: 8px;
-                img{
-                    width: 20px;
-                    height: 20px;
-                }
+				padding: 8px;
+
+				img {
+					width: 20px;
+					height: 20px;
+				}
+
 				&.active,
 				&:hover {
 					background-color: #ECEEF0;
-                    cursor: pointer;
+					cursor: pointer;
 				}
 			}
 		}
@@ -67,16 +95,34 @@
 		}
 	}
 
-    &__show{
-        &.grid-view {
+	&__show {
+		&.grid-view {
 			display: grid;
 			gap: 20px;
 			grid-template-columns: repeat(3, 1fr);
+
+			.excerpt {
+				display: none;
+			}
 		}
 
 		&.list-view {
 			display: flex;
 			flex-wrap: wrap;
-        }
-    }
+			gap: 24px;
+
+			.bds-post {
+				display: flex;
+
+				.entry-thumbnail {
+					width: 40%;
+				}
+
+				.entry-content {
+					width: 60%;
+					padding-left: 20px;
+				}
+			}
+		}
+	}
 }

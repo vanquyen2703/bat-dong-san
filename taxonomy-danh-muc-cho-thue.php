@@ -4,17 +4,16 @@
 	<?php
 	get_template_part( 'template-parts/archive/breadcrumbs' );
 	?>
-	<div class="archive-search">
+ <div class="archive-search">
 		<div class="container">
-			<?= do_shortcode( '[form_search_ban]' ) ?>
+		<?= do_shortcode( '[form_search_thue]' ) ?>
 		</div>
 	</div>
-
 	<div class="container">
 
 		<div class="list-bds__wrap" id="list-store">
 			<div class="list-bds__sidebar">
-				<?php dynamic_sidebar( 'sidebar-2' ) ?>
+				<?php dynamic_sidebar( 'sidebar-3' ) ?>
 			</div>
 			<div class="list-bds__content">
 				<div class="list-bds__order">
@@ -39,7 +38,7 @@
 															'next_text' => __( '>', 'haston' ),
 														],
 													); ?>
-					<?php else : ?>
+<?php else : ?>
 													<?php get_template_part( 'template-parts/content/none' ); ?>
 					<?php endif; ?>
 				</div>

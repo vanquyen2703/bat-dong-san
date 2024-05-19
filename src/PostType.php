@@ -64,8 +64,8 @@ class PostType {
 			'supports'            => [ 'title', 'editor', 'thumbnail' ],
 			'taxonomies'          => [],
 			'rewrite'             => [ 
-					'with_front' => false,
-				],
+				'with_front' => false,
+			],
 		];
 
 		register_post_type( 'nha-dat-mua-ban', $args );
@@ -114,9 +114,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 		register_taxonomy( 'danh-muc-nha-dat', [ 'nha-dat-mua-ban' ], $args2 );
 
@@ -164,9 +164,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 
 		register_taxonomy( 'dia-diem', [ 'nha-dat-mua-ban' ], $args2 );
@@ -215,9 +215,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 
 		register_taxonomy( 'dien-tich', [ 'nha-dat-mua-ban' ], $args2 );
@@ -266,9 +266,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 
 		register_taxonomy( 'gia', [ 'nha-dat-mua-ban' ], $args3 );
@@ -317,9 +317,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 
 		register_taxonomy( 'huong', [ 'nha-dat-mua-ban' ], $args4 );
@@ -368,9 +368,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 
 		register_taxonomy( 'mat-duong', [ 'nha-dat-mua-ban' ], $args5 );
@@ -419,9 +419,9 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
 
 		register_taxonomy( 'phong-ngu', [ 'nha-dat-mua-ban' ], $args6 );
@@ -486,13 +486,63 @@ class PostType {
 			'supports'            => [ 'title', 'editor', 'thumbnail' ],
 			'taxonomies'          => [],
 			'rewrite'             => [ 
-					'with_front' => false,
-				],
+				'with_front' => false,
+			],
 		];
 
 		register_post_type( 'nha-dat-cho-thue', $args );
 
 		$labels2 = [ 
+			'name'                       => esc_html__( 'Danh mục', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Danh mục', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Danh mục cho thuê', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Danh mục', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Danh mục', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Danh mục', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Danh mục', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Danh mục:', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Danh mục', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Danh mục', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Danh mục', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Danh mục', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Danh mục Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Danh mục with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Danh mục', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Danh mục', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Danh mục found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Danh mục', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Danh mục', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Danh mục list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Danh mục list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Danh mục', 'bat-dong-san' ),
+		];
+		$args2   = [ 
+			'label'              => esc_html__( 'Danh mục', 'bat-dong-san' ),
+			'labels'             => $labels2,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => false,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+		register_taxonomy( 'danh-muc-cho-thue', [ 'nha-dat-cho-thue' ], $args2 );
+
+		$labels3 = [ 
 			'name'                       => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
 			'singular_name'              => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
 			'menu_name'                  => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
@@ -517,9 +567,9 @@ class PostType {
 			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
 			'back_to_items'              => esc_html__( '&larr; Go to Quận/Huyện', 'bat-dong-san' ),
 		];
-		$args2   = [ 
+		$args3   = [ 
 			'label'              => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
-			'labels'             => $labels2,
+			'labels'             => $labels3,
 			'description'        => '',
 			'public'             => true,
 			'publicly_queryable' => true,
@@ -536,11 +586,215 @@ class PostType {
 			'meta_box_cb'        => 'post_categories_meta_box',
 			'rest_base'          => '',
 			'rewrite'            => [ 
-					'with_front'   => false,
-					'hierarchical' => false,
-				],
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
 		];
-		register_taxonomy( 'dia-diem-2', [ 'nha-dat-cho-thue' ], $args2 );
+		register_taxonomy( 'dia-diem-rent', [ 'nha-dat-cho-thue' ], $args3 );
+
+		$labels4 = [ 
+			'name'                       => esc_html__( 'Giá', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Giá', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Giá', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Giá', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Giá', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Giá', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Giá', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Giá:', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Giá', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Giá', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Giá', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Giá', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Giá Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Giá with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Giá', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Giá', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Giá found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Giá', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Giá', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Giá list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Giá list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Giá', 'bat-dong-san' ),
+		];
+		$args4   = [ 
+			'label'              => esc_html__( 'Giá', 'bat-dong-san' ),
+			'labels'             => $labels4,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'gia-rent', [ 'nha-dat-cho-thue' ], $args4 );
+
+		$labels5 = [ 
+			'name'                       => esc_html__( 'Hướng nhà', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Hướng nhà', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Hướng nhà', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Hướng ', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Hướng ', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Hướng ', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Hướng ', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Hướng :', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Hướng ', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Hướng ', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Hướng ', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Hướng ', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Hướng  Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Hướng  with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Hướng ', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Hướng ', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Hướng  found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Hướng ', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Hướng ', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Hướng  list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Hướng  list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Hướng ', 'bat-dong-san' ),
+		];
+		$args5   = [ 
+			'label'              => esc_html__( 'Hướng nhà ', 'bat-dong-san' ),
+			'labels'             => $labels5,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'huong-rent', [ 'nha-dat-cho-thue' ], $args5 );
+
+		$labels6 = [ 
+			'name'                       => esc_html__( 'Phòng ngủ', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Phòng ngủ ', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Phòng ngủ ', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Phòng ngủ ', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Phòng ngủ ', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Phòng ngủ ', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Phòng ngủ ', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Phòng ngủ :', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Phòng ngủ ', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Phòng ngủ ', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Phòng ngủ ', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Phòng ngủ ', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Phòng ngủ  Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Phòng ngủ  with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Phòng ngủ ', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Phòng ngủ ', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Phòng ngủ  found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Phòng ngủ ', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Phòng ngủ ', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Phòng ngủ  list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Phòng ngủ  list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Phòng ngủ ', 'bat-dong-san' ),
+		];
+		$args6   = [ 
+			'label'              => esc_html__( 'Phòng ngủ ', 'bat-dong-san' ),
+			'labels'             => $labels6,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'phong-ngu-rent', [ 'nha-dat-cho-thue' ], $args6 );
+
+		$labels7 = [ 
+			'name'                       => esc_html__( 'Thang máy', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Thang máy ', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Thang máy ', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Thang máy ', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Thang máy', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Thang máy', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Thang máy', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Thang máy :', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Thang máy ', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Thang máy', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Thang máy', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Thang máy', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Thang máy Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Thang máy with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Thang máy', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Thang máy', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Thang máy found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Thang máy', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Thang máy', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Thang máy list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Thang máy list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Thang máy', 'bat-dong-san' ),
+		];
+		$args7   = [ 
+			'label'              => esc_html__( 'Thang máy', 'bat-dong-san' ),
+			'labels'             => $labels7,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'thang-may-rent', [ 'nha-dat-cho-thue' ], $args7 );
 	}
 
 }
