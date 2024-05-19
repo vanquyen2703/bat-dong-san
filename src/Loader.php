@@ -133,6 +133,11 @@ class Loader {
 			Assets::css( 'search', true );
 
 		}
+
+		if ( is_page_template( 'page-templates/contact-us.php' ) ) {
+			Assets::css( 'contact-us', true );
+		}
+
 		if ( is_singular( 'nha-dat-mua-ban' ) ) {
 			Assets::css( 'single-bds', true );
 			Assets::css( 'lightslider', true );

@@ -5,10 +5,17 @@
 		padding-top: 24px;
 		border-top: 1px solid #ddd;
 		display: flex;
+		flex-wrap: wrap;
+
+
 	}
 
 	&__sidebar {
 		flex: 0 0 23%;
+
+		@media (max-width:768px) {
+			flex: 0 0 100%;
+		}
 
 		.taxonomy {
 			&-wrapper {
@@ -37,6 +44,11 @@
 		padding-left: 20px;
 		position: relative;
 		overflow: hidden;
+
+		@media (max-width:768px) {
+			flex: 0 0 100%;
+			padding-left: 0;
+		}
 	}
 
 	&__order {
@@ -100,6 +112,10 @@
 			display: grid;
 			gap: 20px;
 			grid-template-columns: repeat(3, 1fr);
+
+			@media (max-width:768px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
 
 			.excerpt {
 				display: none;

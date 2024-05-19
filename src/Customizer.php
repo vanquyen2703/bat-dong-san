@@ -15,6 +15,7 @@ class Customizer {
 		$wp_customize->add_setting( 'footer_phone_number', [ 
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '0912 345 678',
+
 		] );
 		$wp_customize->add_control( 'footer_phone_number', [ 
 			'label'   => esc_html__( 'Số điện thoại 1', 'bat-dong-san' ),
@@ -25,6 +26,7 @@ class Customizer {
 		$wp_customize->add_setting( 'footer_phone_number_2', [ 
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '0912 345 678',
+
 		] );
 		$wp_customize->add_control( 'footer_phone_number_2', [ 
 			'label'   => esc_html__( 'Số điện thoại 2', 'bat-dong-san' ),
@@ -36,6 +38,7 @@ class Customizer {
 		$wp_customize->add_setting( 'footer_hotline', [ 
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '18001234',
+
 		] );
 		$wp_customize->add_control( 'footer_hotline', [ 
 			'label'   => esc_html__( 'Hotline', 'bat-dong-san' ),
@@ -46,6 +49,7 @@ class Customizer {
 		$wp_customize->add_setting( 'footer_hotline_2', [ 
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '18001234',
+
 		] );
 		$wp_customize->add_control( 'footer_hotline_2', [ 
 			'label'   => esc_html__( 'Hotline 2', 'bat-dong-san' ),
@@ -57,6 +61,7 @@ class Customizer {
 		$wp_customize->add_setting( 'footer_email', [ 
 			'sanitize_callback' => 'sanitize_email',
 			'default'           => 'example@example.com',
+
 		] );
 		$wp_customize->add_control( 'footer_email', [ 
 			'label'   => esc_html__( 'Email', 'bat-dong-san' ),
@@ -66,10 +71,11 @@ class Customizer {
 
 		// Button header
 		$wp_customize->add_setting( 'button_header', [ 
-			'sanitize_callback' => 'sanitize_email',
-			'default'           => 'Đăng kí bán',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => 'Đăng tin',
+
 		] );
-		$wp_customize->add_control( 'footer_email', [ 
+		$wp_customize->add_control( 'button_header', [ 
 			'label'   => esc_html__( 'Button header', 'bat-dong-san' ),
 			'section' => 'contact_info',
 			'type'    => 'text',
@@ -77,8 +83,9 @@ class Customizer {
 
 		// Link button header
 		$wp_customize->add_setting( 'link_button_header', [ 
-			'sanitize_callback' => 'sanitize_email',
+			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '/lien-he',
+
 		] );
 		$wp_customize->add_control( 'link_button_header', [ 
 			'label'   => esc_html__( 'Link button header', 'bat-dong-san' ),
@@ -105,6 +112,7 @@ class Customizer {
 		$wp_customize->add_setting( 'facebook', [ 
 			'sanitize_callback' => 'sanitize_email',
 			'default'           => '#',
+
 		] );
 		$wp_customize->add_control( 'facebook', [ 
 			'label'   => esc_html__( 'Link facebook', 'bat-dong-san' ),
@@ -116,6 +124,7 @@ class Customizer {
 		$wp_customize->add_setting( 'intagram', [ 
 			'sanitize_callback' => 'sanitize_email',
 			'default'           => '#',
+
 		] );
 		$wp_customize->add_control( 'intagram', [ 
 			'label'   => esc_html__( 'Link intagram', 'bat-dong-san' ),
@@ -127,6 +136,7 @@ class Customizer {
 		$wp_customize->add_setting( 'youtube', [ 
 			'sanitize_callback' => 'sanitize_email',
 			'default'           => '#',
+
 		] );
 		$wp_customize->add_control( 'youtube', [ 
 			'label'   => esc_html__( 'Link youtube', 'bat-dong-san' ),
@@ -138,6 +148,7 @@ class Customizer {
 		$wp_customize->add_setting( 'twitter', [ 
 			'sanitize_callback' => 'sanitize_email',
 			'default'           => '#',
+
 		] );
 		$wp_customize->add_control( 'twitter', [ 
 			'label'   => esc_html__( 'Link twitter', 'bat-dong-san' ),

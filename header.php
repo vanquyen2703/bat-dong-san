@@ -18,8 +18,6 @@
 					<div class="header__top__menubar">
 						<button type="button" class="navbar-toggler btn pr-0 toggle-menu" aria-label="Toggle navigation"
 							aria-expanded="true" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-							<!-- < ?= Flux\Icon::output('menu'); ?>
-							< ?= Flux\Icon::output('close'); ?> -->
 							<svg xmlns="http://www.w3.org/2000/svg" class="menu" width="40" height="40"
 								viewBox="0 0 1536 1280">
 								<path fill="#222222"
@@ -36,16 +34,22 @@
 					</div>
 					<div class="header__top--logo">
 						<?php if ( is_front_page() ) { ?>
-							<h1 alt="<?php bloginfo( 'description' ); ?>">
-								<?php the_custom_logo(); ?>
-							</h1>
-							<?php
+														<h1 alt="<?php bloginfo( 'description' ); ?>">
+															<?php the_custom_logo(); ?>
+														</h1>
+														<?php
 						} else { ?>
-							<?php the_custom_logo(); ?>
+														<?php the_custom_logo(); ?>
 						<?php } ?>
 					</div>
 					<div class="header__top--contact">
-						<a href="tel:0989898989" class="hotline">
+					<?php
+					$button_header      = get_theme_mod( 'button_header', 'Đăng tin' );
+					$link_button_header = get_theme_mod( '$link_button_header', '/lien-he' );
+					$hotline            = get_theme_mod( 'footer_hotline', '18001234' );
+					$hotline_2          = get_theme_mod( 'footer_hotline_2', '18001234' );
+					?>
+						<a href="tel:<?php echo esc_html( $hotline ); ?>" class="hotline">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 								<path d="M15.793 6.793 13 4v7h7l-2.793-2.793 4.5-4.5-1.414-1.414z"></path>
 								<path
@@ -54,10 +58,10 @@
 							</svg>
 							<div class="hl-content">
 								<span class="txt">Hotline 1</span>
-								<span class="number">0989898989</span>
+								<span class="number"><?php echo esc_html( $hotline ); ?></span>
 							</div>
 						</a>
-						<a href="tel:0989898989" class="hotline">
+						<a href="tel:<?php echo esc_html( $hotline_2 ); ?>" class="hotline">
 							<!-- < ?= Flux\Icon::load('hotline') ?> -->
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 								<path d="M15.793 6.793 13 4v7h7l-2.793-2.793 4.5-4.5-1.414-1.414z"></path>
@@ -67,11 +71,11 @@
 							</svg>
 							<div class="hl-content">
 								<span class="txt">Hotline 2</span>
-								<span class="number">0989898989</span>
+								<span class="number"><?php echo esc_html( $hotline_2 ); ?></span>
 							</div>
 						</a>
-						<a href="tel:0989898989" class="register">
-							<span>Đăng kí bán</span>
+						<a href="<?php echo esc_html( $link_button_header ); ?>" class="register">
+							<span><?php echo esc_html( $button_header ); ?></span>
 						</a>
 					</div>
 				</div>

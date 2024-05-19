@@ -1,0 +1,191 @@
+.contact {
+	&__wrapper {
+		#breadcrumbs {
+			padding: 16px 0;
+		}
+
+		.title-page {
+			margin: 0;
+			font-family: var(--font-heading);
+			font-size: 32px;
+			line-height: 1.4;
+			color: var(--color-heading);
+			margin: 0 0 18px;
+			font-weight: 600;
+			text-transform: capitalize;
+
+			@media (max-width:768px) {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+.form {
+	padding: 60px 0;
+
+	&__wrap {
+		padding: 40px;
+		background: #fff;
+		box-shadow: 0px 4px 26px 0px rgba(66, 71, 76, .08);
+
+		@media (max-width:768px) {
+			padding: 24px 20px;
+		}
+
+		.fluentform {
+			h2 {
+				color: #000;
+				font-family: var(--font-heading);
+				font-size: 40px;
+				font-weight: 600;
+				margin: 0 0 18px 0;
+				text-align: center;
+
+				@media (max-width:991px) {
+					font-size: 32px;
+				}
+
+				@media (max-width:768px) {
+					font-size: 28px;
+				}
+			}
+
+			p {
+				color: #4A4A4A;
+				font-family: var(--font-main);
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 140%;
+				margin: 0 auto;
+				max-width: 788px;
+			}
+
+			label {
+				color: var(--color-heading);
+				font-family: var(--font-heading);
+				font-size: 14px;
+				line-height: 20px !important;
+				font-weight: 700 !important;
+				margin: 0 0 8px 0;
+			}
+
+			input {
+				border: 1px solid #e3e3e3;
+				border-radius: 0 !important;
+				background: transparent;
+				height: 48px;
+			}
+
+			textarea {
+				border: 1px solid #e3e3e3;
+				border-radius: 0 !important;
+				background: transparent;
+				min-height: 155px;
+			}
+
+			.ff-t-container {
+				margin-bottom: 22px !important;
+			}
+
+			.ff-t-cell {
+				@media (max-width:768px) {
+					margin-bottom: 22px !important;
+				}
+			}
+
+			.ff-el-group {
+				margin-bottom: 22px !important;
+
+				&:last-child {
+					margin-bottom: 0 !important;
+				}
+
+				.ff-btn-submit {
+					display: flex;
+					border-radius: 7px;
+					width: 190px;
+					height: 48px;
+					padding: 6px 18px;
+					justify-content: center;
+					align-items: center;
+					background: var(--color-main);
+					color: var(--color-white);
+					transition: 0.3s;
+					font-family: var(--font-heading);
+					font-size: 16px;
+					font-weight: 700;
+					line-height: 26px;
+					text-decoration: none;
+
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+
+			.ff-el-input--content {
+				display: flex;
+				gap: 10px;
+				flex-wrap: wrap;
+
+				input[type=radio] {
+					border-radius: 50%;
+					height: 24px;
+					width: 24px;
+					top: 0;
+				}
+
+				label {
+					margin: 0;
+					background: rgb(171 115 84 / 14%);
+					height: 36px;
+					border-radius: 50px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 6px 10px 6px 8px;
+					gap: 6px;
+				}
+
+				.ff-el-form-check {
+					label {
+						margin: 0;
+					}
+
+					input {
+						border: none;
+					}
+
+					&.ff_item_selected {
+						label {
+							background: var(--color-main);
+							margin: 0;
+							color: var(--color-white);
+						}
+
+						input {
+							&::before {
+								content: url(https://sonjymec.com/wp-content/uploads/2024/03/check.png);
+								position: absolute;
+								left: 0;
+								top: 0;
+								width: 25px;
+								height: 25px;
+								overflow: hidden;
+							}
+						}
+					}
+				}
+
+				.ff-el-form-control {
+					border: 1px solid #dadbdd;
+					border-radius: 0;
+					color: #606266;
+					background: #fff;
+					height: 48px;
+				}
+			}
+		}
+	}
+}
