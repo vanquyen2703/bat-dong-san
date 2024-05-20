@@ -16,10 +16,10 @@ class Ajax {
 	public function display_district() {
 		ob_start();
 		echo '<option value="all">Chọn Quận/Huyện</option>';
-		if ( empty( $_POST[ 'city' ] ) ) {
+		if ( empty( $_POST['city'] ) ) {
 			wp_send_json_error();
 		}
-		$city_id   = $_POST[ 'city' ];
+		$city_id   = $_POST['city'];
 		$districts = get_terms( [ 
 			'taxonomy'   => 'dia-diem',
 			'hide_empty' => false,
@@ -27,8 +27,8 @@ class Ajax {
 		] );
 		foreach ( $districts as $district ) {
 			?>
-																														<option value="<?= $district->slug ?>"><?= $district->name ?></option>
-																														<?php
+			<option value="<?= $district->slug ?>"><?= $district->name ?></option>
+			<?php
 		}
 		$result = ob_get_clean();
 		wp_send_json_success( $result );
@@ -38,10 +38,10 @@ class Ajax {
 	public function display_district_rent() {
 		ob_start();
 		echo '<option value="all">Chọn Quận/Huyện</option>';
-		if ( empty( $_POST[ 'city_rent' ] ) ) {
+		if ( empty( $_POST['city_rent'] ) ) {
 			wp_send_json_error();
 		}
-		$city_id        = $_POST[ 'city_rent' ];
+		$city_id        = $_POST['city_rent'];
 		$districts_rent = get_terms( [ 
 			'taxonomy'   => 'dia-diem-rent',
 			'hide_empty' => false,
@@ -49,8 +49,8 @@ class Ajax {
 		] );
 		foreach ( $districts_rent as $district_rent ) {
 			?>
-						<option value="<?= $district_rent->slug ?>"><?= $district_rent->name ?></option>
-						<?php
+			<option value="<?= $district_rent->slug ?>"><?= $district_rent->name ?></option>
+			<?php
 		}
 		$result = ob_get_clean();
 		wp_send_json_success( $result );
@@ -59,7 +59,7 @@ class Ajax {
 
 	public function filter_sidebar() {
 		ob_start();
-		$terms  = $_POST[ 'name' ];
+		$terms  = $_POST['name'];
 		$args[] = array( 'relation' => 'AND' );
 		foreach ( $terms as $key => $value ) {
 			$args[] = [ 

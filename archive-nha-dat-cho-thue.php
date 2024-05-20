@@ -6,7 +6,7 @@
 	?>
 	<div class="archive-search">
 		<div class="container">
-		<?= do_shortcode( '[form_search_thue]' ) ?>
+			<?= do_shortcode( '[form_search_thue]' ) ?>
 		</div>
 	</div>
 
@@ -24,23 +24,23 @@
 
 					<?php
 					if ( have_posts() ) : ?>
-															<div class="list-bds__show grid-view">
-																<?php
-																while ( have_posts() ) {
-																	the_post();
-																	get_template_part( 'template-parts/content', 'bds' );
-																}
-																?>
-															</div>
-															<?php the_posts_pagination(
-																[ 
-																	'mid_size'  => 1,
-																	'prev_text' => __( '<', 'haston' ),
-																	'next_text' => __( '>', 'haston' ),
-																],
-															); ?>
+						<div class="list-bds__show grid-view">
+							<?php
+							while ( have_posts() ) {
+								the_post();
+								get_template_part( 'template-parts/content', 'bds' );
+							}
+							?>
+						</div>
+						<?php the_posts_pagination(
+							[ 
+								'mid_size'  => 1,
+								'prev_text' => __( '<', 'haston' ),
+								'next_text' => __( '>', 'haston' ),
+							],
+						); ?>
 					<?php else : ?>
-															<?php get_template_part( 'template-parts/content/none' ); ?>
+						<?php get_template_part( 'template-parts/content/none' ); ?>
 					<?php endif; ?>
 				</div>
 			</div>
