@@ -129,7 +129,7 @@ class Shortcode {
 					}
 					?>
 				</select>
-				<select name="districts_rent" id="#districts_rent" class="districts_rent">
+				<select name="districts_rent" id="districts_rent" class="districts_rent">
 					<option value="all">Chọn Phường</option>
 				</select>
 
@@ -159,7 +159,7 @@ class Shortcode {
 					}
 					?>
 				</select>
-				<select name="huong" id="" class="huong">
+				<select name="phong" id="" class="phong">
 					<?php
 					echo '<option value="all">Phòng ngủ</option>';
 					$phong_ngu_rent = get_terms( [ 
@@ -186,7 +186,7 @@ class Shortcode {
 				<button type="submit" class="btn-search">Tìm kiếm</button>
 			</div>
 			<div class="box-select">
-				<select name="loai_nha_dat" id="" class="tax-danh-muc">
+				<select name="loai_du_an" id="" class="tax-danh-muc">
 					<?php
 					echo '<option value="all">Chọn loại dự án</option>';
 					$terms_rent = get_terms( [ 
@@ -199,7 +199,7 @@ class Shortcode {
 					}
 					?>
 				</select>
-				<select name="city" id="city_rent" class="city">
+				<select name="quan" id="city_rent" class="quan">
 					<?php
 					echo '<option value="all">Chọn Quận</option>';
 					$cities_rent = get_terms( [ 
@@ -212,7 +212,7 @@ class Shortcode {
 					}
 					?>
 				</select>
-				<select name="districts_rent" id="#districts_rent" class="districts_rent">
+				<select name="phuong" id="districts_rent" class="phuong">
 					<option value="all">Chọn Phường</option>
 				</select>
 

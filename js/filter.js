@@ -22,6 +22,7 @@ jQuery( function ( $ ) {
 			} );
 		} );
 	}
+
 	// var $filterCheckboxes = $( 'input[type="checkbox"]' );
 	// var filterFunc = function () {
 	// 	var selectedFilters = {};

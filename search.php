@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 <?php
 // Lấy các giá trị tìm kiếm
-$loai_nha_dat = isset( $_GET[ 'loai_nha_dat' ] ) ? $_GET[ 'loai_nha_dat' ] : 'all';
-$city         = isset( $_GET[ 'city' ] ) ? $_GET[ 'city' ] : 'all';
-$districts    = isset( $_GET[ 'districts' ] ) ? $_GET[ 'districts' ] : 'all';
-$dien_tich    = isset( $_GET[ 'dien_tich' ] ) ? $_GET[ 'dien_tich' ] : 'all';
-$gia          = isset( $_GET[ 'gia' ] ) ? $_GET[ 'gia' ] : 'all';
+$post_type = $_GET['post_type'];
+
+$loai_nha_dat = isset( $_GET['loai_nha_dat'] ) ? $_GET['loai_nha_dat'] : 'all';
+$city         = isset( $_GET['city'] ) ? $_GET['city'] : 'all';
+$districts    = isset( $_GET['districts'] ) ? $_GET['districts'] : 'all';
+$dien_tich    = isset( $_GET['dien_tich'] ) ? $_GET['dien_tich'] : 'all';
+$gia          = isset( $_GET['gia'] ) ? $_GET['gia'] : 'all';
 
 // Chuẩn bị mảng lưu trữ tên của các thuộc tính tìm kiếm
 $search_terms = [];
@@ -52,49 +54,82 @@ $search_message = 'Kết quả tìm kiếm: ' . implode( ', ', $search_terms );
 		<h1 class="title-search"><?php echo $search_message; ?></h1>
 		<?php
 		$args[] = array( 'relation' => 'AND' );
-		if ( $loai_nha_dat != 'all' ) {
-			$args[] = [ 
-				'taxonomy' => 'danh-muc-nha-dat',
-				'field'    => 'slug',
-				'terms'    => $loai_nha_dat,
-			];
+		if ( $post_type == 'nha-dat-mua-ban' ) {
+			if ( $loai_nha_dat != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'danh-muc-nha-dat',
+					'field'    => 'slug',
+					'terms'    => $loai_nha_dat,
+				];
+			}
+			if ( $city != 'all' && $districts == 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dia-diem',
+					'field'    => 'slug',
+					'terms'    => $city,
+				];
+			}
+			if ( $districts != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dia-diem',
+					'field'    => 'slug',
+					'terms'    => $districts,
+				];
+			}
+			if ( $dien_tich != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dien-tich',
+					'field'    => 'slug',
+					'terms'    => $dien_tich,
+				];
+			}
+			if ( $gia != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'gia',
+					'field'    => 'slug',
+					'terms'    => $gia,
+				];
+			}
 		}
-		if ( $city != 'all' && $districts == 'all' ) {
-			$args[] = [ 
-				'taxonomy' => 'dia-diem',
-				'field'    => 'slug',
-				'terms'    => $city,
-			];
+		if ( $post_type == 'nha-dat-cho-thue' ) {
+			if ( $loai_nha_dat != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'danh-muc-cho-thue',
+					'field'    => 'slug',
+					'terms'    => $loai_nha_dat,
+				];
+			}
+			if ( $city != 'all' && $districts == 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dia-diem-rent',
+					'field'    => 'slug',
+					'terms'    => $city,
+				];
+			}
+			if ( $districts != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dia-diem-rent',
+					'field'    => 'slug',
+					'terms'    => $districts,
+				];
+			}
+
+			if ( $gia != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'gia_rent',
+					'field'    => 'slug',
+					'terms'    => $gia,
+				];
+			}
 		}
-		if ( $districts != 'all' ) {
-			$args[] = [ 
-				'taxonomy' => 'dia-diem',
-				'field'    => 'slug',
-				'terms'    => $districts,
-			];
-		}
-		if ( $dien_tich != 'all' ) {
-			$args[] = [ 
-				'taxonomy' => 'dien-tich',
-				'field'    => 'slug',
-				'terms'    => $dien_tich,
-			];
-		}
-		if ( $gia != 'all' ) {
-			$args[] = [ 
-				'taxonomy' => 'gia',
-				'field'    => 'slug',
-				'terms'    => $gia,
-			];
-		}
-		if ( isset( $_GET[ 'post_type' ] ) ) {
-			$post_type = $_GET[ 'post_type' ];
+		if ( isset( $_GET['post_type'] ) ) {
+			$post_type = $_GET['post_type'];
 		}
 		$data = [ 
 			'post_type' => $post_type,
 			'tax_query' => $args,
 		];
-
+		//dd( $data );
 		$the_query = new WP_Query( $data );
 
 		?>
