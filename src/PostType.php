@@ -910,6 +910,108 @@ class PostType {
 			],
 		];
 		register_taxonomy( 'danh-muc-du-an', [ 'du-an' ], $args2 );
+
+		$labels3 = [ 
+			'name'                       => esc_html__( 'Mức giá', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Mức giá', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Mức giá', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Mức giá', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Mức giá', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Mức giá', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Mức giá', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Mức giá:', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Mức giá', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Mức giá', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Mức giá', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Mức giá', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Mức giá Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Mức giá with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Mức giá', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Mức giá', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Mức giá found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Mức giá', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Mức giá', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Mức giá list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Mức giá list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Mức giá', 'bat-dong-san' ),
+		];
+		$args3   = [ 
+			'label'              => esc_html__( 'Mức giá', 'bat-dong-san' ),
+			'labels'             => $labels3,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'muc-ga', [ 'du-an' ], $args3 );
+
+		$labels4 = [ 
+			'name'                       => esc_html__( 'Trạng thái', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Trạng thái', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Trạng thái', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Trạng thái', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Trạng thái', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Trạng thái', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Trạng thái', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Trạng thái:', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Trạng thái', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Trạng thái', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Trạng thái', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Trạng thái', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Trạng thái Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Trạng thái with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Trạng thái', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Trạng thái', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Trạng thái found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Trạng thái', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Trạng thái', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Trạng thái list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Trạng thái list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Trạng thái', 'bat-dong-san' ),
+		];
+		$args4   = [ 
+			'label'              => esc_html__( 'Trạng thái', 'bat-dong-san' ),
+			'labels'             => $labels4,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'trang-thai', [ 'du-an' ], $args4 );
 	}
 
 }

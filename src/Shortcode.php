@@ -5,6 +5,7 @@ class Shortcode {
 	public function __construct() {
 		add_shortcode( 'form_search_ban', array( $this, 'render_form_ban' ) );
 		add_shortcode( 'form_search_thue', array( $this, 'render_form_thue' ) );
+		add_shortcode( 'form_search_du_an', array( $this, 'render_form_du_an' ) );
 		add_shortcode( 'filter_products', array( $this, 'render_filter' ) );
 		add_shortcode( 'taxonomies_and_terms_list', array( $this, 'taxonomies_and_terms_list_shortcode' ) );
 		add_shortcode( 'taxonomies_and_terms_list_rent', array( $this, 'taxonomies_and_terms_list_rent_shortcode' ) );
@@ -168,6 +169,76 @@ class Shortcode {
 					] );
 					foreach ( $phong_ngu_rent as $phong_ngu_rent ) {
 						echo '<option value="' . $phong_ngu_rent->slug . '">' . $phong_ngu_rent->name . '</option>';
+					}
+					?>
+				</select>
+			</div>
+		</form>
+		<?php
+	}
+
+	public function render_form_du_an() {
+		?>
+		<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="search-form" role="search">
+			<div class="text-search">
+				<input type="hidden" name="post_type" value="du-an">
+				<input type="text" name="s" placeholder="<?php esc_attr_e( 'Nhập từ khóa tìm kiếm...', 'bat-dong-san' ) ?>">
+				<button type="submit" class="btn-search">Tìm kiếm</button>
+			</div>
+			<div class="box-select">
+				<select name="loai_nha_dat" id="" class="tax-danh-muc">
+					<?php
+					echo '<option value="all">Chọn loại dự án</option>';
+					$terms_rent = get_terms( [ 
+						'taxonomy'   => 'danh-muc-du-an',
+						'hide_empty' => false,
+						'parent'     => 0,
+					] );
+					foreach ( $terms_rent as $terms_rent ) {
+						echo '<option value="' . $terms_rent->slug . '">' . $terms_rent->name . '</option>';
+					}
+					?>
+				</select>
+				<select name="city" id="city_rent" class="city">
+					<?php
+					echo '<option value="all">Chọn Quận</option>';
+					$cities_rent = get_terms( [ 
+						'taxonomy'   => 'dia-diem-rent',
+						'hide_empty' => false,
+						'parent'     => 0,
+					] );
+					foreach ( $cities_rent as $city_rent ) {
+						echo '<option data-ip="' . $city_rent->term_id . '" value="' . $city_rent->slug . '">' . $city_rent->name . '</option>';
+					}
+					?>
+				</select>
+				<select name="districts_rent" id="#districts_rent" class="districts_rent">
+					<option value="all">Chọn Phường</option>
+				</select>
+
+				<select name="muc_gia" id="" class="muc_gia">
+					<?php
+					echo '<option value="all">Mức giá</option>';
+					$prices_rent = get_terms( [ 
+						'taxonomy'   => 'muc-gia',
+						'hide_empty' => false,
+						'parent'     => 0,
+					] );
+					foreach ( $prices_rent as $price_rent ) {
+						echo '<option value="' . $price_rent->slug . '">' . $price_rent->name . '</option>';
+					}
+					?>
+				</select>
+				<select name="trang_thai" id="" class="trang_thai">
+					<?php
+					echo '<option value="all">Trạng thái</option>';
+					$huong_rent = get_terms( [ 
+						'taxonomy'   => 'trang-thai',
+						'hide_empty' => false,
+						'parent'     => 0,
+					] );
+					foreach ( $huong_rent as $huong_rent ) {
+						echo '<option value="' . $huong_rent->slug . '">' . $huong_rent->name . '</option>';
 					}
 					?>
 				</select>
