@@ -18,12 +18,12 @@
 
         &.current-menu-item {
             a {
-                color: var(--color-access);
+                color: var(--color-main);
             }
 
             .sub-menu-toggle {
                 svg path {
-                    fill: var(--color-access);
+                    fill: var(--color-main);
                 }
             }
         }
@@ -234,7 +234,7 @@
 
 .current-menu-item>a,
 .current-menu-item .menu-text>a {
-    color: var(--color-access);
+    color: var(--color-main);
 }
 
 
@@ -422,7 +422,7 @@
                 .menu-text {
                     .sub-menu-toggle {
                         svg path {
-                            color: var(--color-access);
+                            color: var(--color-main);
                         }
                     }
                 }

@@ -11,7 +11,7 @@ $youtube        = get_theme_mod( 'youtube', '#' );
 $twitter        = get_theme_mod( 'twitter', '#' );
 
 ?>
-<footer class="footer">
+<class class="footer">
 	<div class="container">
 		<div class="footer__columns">
 			<div class="footer__column footer__left">
@@ -24,24 +24,24 @@ $twitter        = get_theme_mod( 'twitter', '#' );
 
 				<div class="social-icons flex">
 					<?php if ( $facebook ) : ?>
-														<a href="<?php echo esc_html( $facebook ); ?>">
-														<?php Flux\Icon::output( 'facebook' ) ?>
-													</a>
+																<a href="<?php echo esc_html( $facebook ); ?>">
+																<?php Flux\Icon::output( 'facebook' ) ?>
+															</a>
 					<?php endif ?>
 					<?php if ( $instagram ) : ?>
-														<a href="<?php echo esc_html( $instagram ); ?>">
-														<?php Flux\Icon::output( 'instagram' ) ?>
-													</a>
+																<a href="<?php echo esc_html( $instagram ); ?>">
+																<?php Flux\Icon::output( 'instagram' ) ?>
+															</a>
 					<?php endif ?>
 					<?php if ( $youtube ) : ?>
-														<a href="<?php echo esc_html( $youtube ); ?>">
-														<?php Flux\Icon::output( 'youtube' ) ?>
-													</a>
+																<a href="<?php echo esc_html( $youtube ); ?>">
+																<?php Flux\Icon::output( 'youtube' ) ?>
+															</a>
 					<?php endif ?>
 					<?php if ( $twitter ) : ?>
-														<a href="<?php echo esc_html( $twitter ); ?>">
-														<?php Flux\Icon::output( 'twitter' ) ?>
-													</a>
+																<a href="<?php echo esc_html( $twitter ); ?>">
+																<?php Flux\Icon::output( 'twitter' ) ?>
+															</a>
 					<?php endif ?>
 				</div>
 			</div>
@@ -133,42 +133,52 @@ $twitter        = get_theme_mod( 'twitter', '#' );
 	</div>
 
 	<div class="social-button">
-		<div class="social-button-content social-hotline">
-			<a href="tel:<?= esc_html( $hotline ); ?>" class="call-icon" rel="nofollow">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/hotline.png' ); ?>" width="30px"
-					height="30px" alt="hotline">
-				<div class="animated alo-circle"></div>
-			</a>
-		</div>
-		<div class="social-button-content social-hotline">
-			<a href="tel:<?= esc_html( $hotline_2 ); ?>" class="call-icon" rel="nofollow">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/hotline.png' ); ?>" width="30px"
-					height="30px" alt="hotline">
-				<div class="animated alo-circle"></div>
-			</a>
-		</div>
-		<div class="social-button-content social-mess">
-			<a href="<?php echo esc_html( $facebook ); ?>" class="mess-icon" rel="nofollow" target="_blank">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/mess.png' ); ?>" width="30px"
-					height="30px" alt="mess">
-				<div class="animated alo-circle"></div>
-			</a>
-		</div>
-		<div class="social-button-content social-zalo">
-			<a href="https://zalo.me/<?php echo esc_html( $phone_number ); ?>" class="zalo-icon" rel="nofollow" target="_blank">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/zalo.png' ); ?>" width="30px"
-					height="30px" alt="zalo">
-				<div class="animated alo-circle"></div>
-			</a>
-		</div>
-		<div class="social-button-content social-zalo">
-			<a href="https://zalo.me/<?php echo esc_html( $phone_number_2 ); ?>" class="zalo-icon" rel="nofollow" target="_blank">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/zalo.png' ); ?>" width="30px"
-					height="30px" alt="zalo">
-				<div class="animated alo-circle"></div>
-			</a>
-		</div>
+		<?php if ( ! empty( $hotline ) ) : ?>
+					<div class="social-button-content social-hotline">
+						<a href="tel:<?= esc_html( $hotline ); ?>" class="call-icon" rel="nofollow">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/hotline.png' ); ?>" width="30px" height="30px" alt="hotline">
+							<div class="animated alo-circle"></div>
+						</a>
+					</div>
+		<?php endif; ?>
+
+		<?php if ( ! empty( $hotline_2 ) ) : ?>
+					<div class="social-button-content social-hotline">
+						<a href="tel:<?= esc_html( $hotline_2 ); ?>" class="call-icon" rel="nofollow">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/hotline.png' ); ?>" width="30px" height="30px" alt="hotline">
+							<div class="animated alo-circle"></div>
+						</a>
+					</div>
+		<?php endif; ?>
+
+		<?php if ( ! empty( $facebook ) ) : ?>
+					<div class="social-button-content social-mess">
+						<a href="<?php echo esc_html( $facebook ); ?>" class="mess-icon" rel="nofollow" target="_blank">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/mess.png' ); ?>" width="30px" height="30px" alt="mess">
+							<div class="animated alo-circle"></div>
+						</a>
+					</div>
+		<?php endif; ?>
+
+		<?php if ( ! empty( $phone_number ) ) : ?>
+					<div class="social-button-content social-zalo">
+						<a href="https://zalo.me/<?php echo esc_html( $phone_number ); ?>" class="zalo-icon" rel="nofollow" target="_blank">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/zalo.png' ); ?>" width="30px" height="30px" alt="zalo">
+							<div class="animated alo-circle"></div>
+						</a>
+					</div>
+		<?php endif; ?>
+
+		<?php if ( ! empty( $phone_number_2 ) ) : ?>
+					<div class="social-button-content social-zalo">
+						<a href="https://zalo.me/<?php echo esc_html( $phone_number_2 ); ?>" class="zalo-icon" rel="nofollow" target="_blank">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/zalo.png' ); ?>" width="30px" height="30px" alt="zalo">
+							<div class="animated alo-circle"></div>
+						</a>
+					</div>
+		<?php endif; ?>
 	</div>
+
 </footer>
 
 <?php wp_footer(); ?>

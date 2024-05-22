@@ -13,8 +13,8 @@ $categories = get_the_category( $post->ID );
 					<ul>
 						<li>
 							<!-- < ?php Icon::output('folder') ?> -->
-							<a href="<?= get_category_link( $categories[0]->term_id ) ?>">
-								<?= esc_html( $categories[0]->cat_name ); ?>
+							<a href="<?= get_category_link( $categories[ 0 ]->term_id ) ?>">
+								<?= esc_html( $categories[ 0 ]->cat_name ); ?>
 							</a>
 						</li>
 						<li>
@@ -25,6 +25,7 @@ $categories = get_the_category( $post->ID );
 				</div>
 
 				<?php the_content(); ?>
+
 			</div>
 			<div class="single-tag">
 				<div class="tag">
@@ -34,20 +35,20 @@ $categories = get_the_category( $post->ID );
 					<ul>
 						<li><a target="_blank" rel="noopener"
 								href="https://facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
-								<!-- < ?php Icon::output('facebook') ?> -->
+								<?php Flux\Icon::output( 'facebook' ) ?>
 							</a></li>
 						<li><a target="_blank" rel="noopener"
 								href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>">
-								<!-- < ?php Icon::output('twitter') ?> -->
+								<?php Flux\Icon::output( 'twitter' ) ?>
 							</a></li>
 						<li><a target="_blank" rel="noopener"
 								href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>">
-								<!-- < ?php Icon::output('linkedin') ?> -->
+								<?php Flux\Icon::output( 'linkedin' ) ?>
 							</a></li>
 					</ul>
 				</div>
 			</div>
-			<?php get_template_part( 'template-parts/single/related-posts' ) ?>
+			<?php get_template_part( 'template-parts/single/related-post' ) ?>
 			<?php
 			// if ( comments_open() || get_comments_number() ) :
 			// 	comments_template();

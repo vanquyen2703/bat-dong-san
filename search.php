@@ -1,13 +1,18 @@
 <?php get_header(); ?>
 <?php
 // Lấy các giá trị tìm kiếm
-$post_type = $_GET['post_type'];
+$post_type = $_GET[ 'post_type' ];
 
-$loai_nha_dat = isset( $_GET['loai_nha_dat'] ) ? $_GET['loai_nha_dat'] : 'all';
-$city         = isset( $_GET['city'] ) ? $_GET['city'] : 'all';
-$districts    = isset( $_GET['districts'] ) ? $_GET['districts'] : 'all';
-$dien_tich    = isset( $_GET['dien_tich'] ) ? $_GET['dien_tich'] : 'all';
-$gia          = isset( $_GET['gia'] ) ? $_GET['gia'] : 'all';
+$loai_nha_dat = isset( $_GET[ 'loai_nha_dat' ] ) ? $_GET[ 'loai_nha_dat' ] : 'all';
+$loai_du_an   = isset( $_GET[ 'loai_du_an' ] ) ? $_GET[ 'loai_du_an' ] : 'all';
+$city         = isset( $_GET[ 'city' ] ) ? $_GET[ 'city' ] : 'all';
+$quan         = isset( $_GET[ 'quan' ] ) ? $_GET[ 'quan' ] : 'all';
+$phuong       = isset( $_GET[ 'phuong' ] ) ? $_GET[ 'phuong' ] : 'all';
+$districts    = isset( $_GET[ 'districts' ] ) ? $_GET[ 'districts' ] : 'all';
+$dien_tich    = isset( $_GET[ 'dien_tich' ] ) ? $_GET[ 'dien_tich' ] : 'all';
+$gia          = isset( $_GET[ 'gia' ] ) ? $_GET[ 'gia' ] : 'all';
+$muc_gia      = isset( $_GET[ 'muc_gia' ] ) ? $_GET[ 'muc_gia' ] : 'all';
+$trang_thai   = isset( $_GET[ 'trang_thai' ] ) ? $_GET[ 'trang_thai' ] : 'all';
 
 // Chuẩn bị mảng lưu trữ tên của các thuộc tính tìm kiếm
 $search_terms = [];
@@ -26,6 +31,7 @@ if ( $city != 'all' ) {
 		$search_terms[] = '<span>' . 'Quận: ' . $term->name . '</span>';
 	}
 }
+
 if ( $districts != 'all' ) {
 	$term = get_term_by( 'slug', $districts, 'dia-diem' );
 	if ( $term ) {
@@ -42,6 +48,37 @@ if ( $gia != 'all' ) {
 	$term = get_term_by( 'slug', $gia, 'gia' );
 	if ( $term ) {
 		$search_terms[] = '<span>' . 'Giá: ' . $term->name . '</span>';
+	}
+}
+//du-an
+if ( $loai_du_an != 'all' ) {
+	$term = get_term_by( 'slug', $loai_du_an, 'danh-muc-du-an' );
+	if ( $term ) {
+		$search_terms[] = '<span>' . 'Loại dự án: ' . $term->name . '</span>';
+	}
+}
+if ( $quan != 'all' ) {
+	$term = get_term_by( 'slug', $quan, 'dia-diem-du-an' );
+	if ( $term ) {
+		$search_terms[] = '<span>' . 'Quận: ' . $term->name . '</span>';
+	}
+}
+if ( $phuong != 'all' ) {
+	$term = get_term_by( 'slug', $phuong, 'dia-diem-du-an' );
+	if ( $term ) {
+		$search_terms[] = '<span>' . 'Phường: ' . $term->name . '</span>';
+	}
+}
+if ( $muc_gia != 'all' ) {
+	$term = get_term_by( 'slug', $muc_gia, 'muc-gia' );
+	if ( $term ) {
+		$search_terms[] = '<span>' . 'Mức giá: ' . $term->name . '</span>';
+	}
+}
+if ( $trang_thai != 'all' ) {
+	$term = get_term_by( 'slug', $trang_thai, 'trang-thai' );
+	if ( $term ) {
+		$search_terms[] = '<span>' . 'Trạng thái: ' . $term->name . '</span>';
 	}
 }
 
@@ -122,8 +159,46 @@ $search_message = 'Kết quả tìm kiếm: ' . implode( ', ', $search_terms );
 				];
 			}
 		}
-		if ( isset( $_GET['post_type'] ) ) {
-			$post_type = $_GET['post_type'];
+		if ( $post_type == 'du-an' ) {
+			if ( $loai_du_an != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'danh-muc-du-an',
+					'field'    => 'slug',
+					'terms'    => $loai_du_an,
+				];
+			}
+			if ( $quan != 'all' && $districts == 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dia-diem-du-an',
+					'field'    => 'slug',
+					'terms'    => $quan,
+				];
+			}
+			if ( $phuong != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'dia-diem-du-an',
+					'field'    => 'slug',
+					'terms'    => $phuong,
+				];
+			}
+
+			if ( $muc_gia != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'muc_gia',
+					'field'    => 'slug',
+					'terms'    => $muc_gia,
+				];
+			}
+			if ( $trang_thai != 'all' ) {
+				$args[] = [ 
+					'taxonomy' => 'trang_thai',
+					'field'    => 'slug',
+					'terms'    => $trang_thai,
+				];
+			}
+		}
+		if ( isset( $_GET[ 'post_type' ] ) ) {
+			$post_type = $_GET[ 'post_type' ];
 		}
 		$data = [ 
 			'post_type' => $post_type,
@@ -144,7 +219,7 @@ $search_message = 'Kết quả tìm kiếm: ' . implode( ', ', $search_terms );
 					$count++;
 				endwhile;
 			else :
-				echo 'Không có bài viết nào';
+				echo 'Không có bất động sản phù hợp. Vui lòng tìm kiếm lại theo bộ lọc.';
 			endif;
 			?>
 		</div>

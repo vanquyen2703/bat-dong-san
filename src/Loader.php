@@ -42,6 +42,16 @@ class Loader {
 		);
 		register_sidebar(
 			[ 
+				'name'          => esc_html__( 'Sidebar bds', 'bat-dong-san' ),
+				'id'            => 'sidebar-bds',
+				'before_widget' => '<aside class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			],
+		);
+		register_sidebar(
+			[ 
 				'name'          => esc_html__( 'Sidebar bất động sản', 'haston' ),
 				'id'            => 'sidebar-2',
 				'before_widget' => '<aside class="widget %2$s">',
@@ -133,6 +143,9 @@ class Loader {
 			Assets::css( 'search', true );
 
 		}
+		if ( is_404() ) {
+			Assets::css( '404', true );
+		}
 
 		if ( is_page_template( 'page-templates/contact-us.php' ) ) {
 			Assets::css( 'contact-us', true );
@@ -150,7 +163,21 @@ class Loader {
 			Assets::js( 'lightslider', [ 'jquery' ] );
 			Assets::js( 'gallery', [ 'jquery' ] );
 		}
+		if ( is_singular( 'du-an' ) ) {
+			Assets::css( 'single-bds', true );
+			Assets::css( 'lightslider', true );
+			Assets::js( 'lightslider', [ 'jquery' ] );
+			Assets::js( 'gallery', [ 'jquery' ] );
+		}
+		if ( is_archive( 'nha-dat-cho-thue' ) ) {
+			Assets::css( 'archive-nha-dat', true );
+			Assets::js( 'orderby', [ 'jquery' ], [ 'ajaxURL' => admin_url( 'admin-ajax.php' ) ] );
+		}
 		if ( is_archive( 'nha-dat-mua-ban' ) ) {
+			Assets::css( 'archive-nha-dat', true );
+			Assets::js( 'orderby', [ 'jquery' ], [ 'ajaxURL' => admin_url( 'admin-ajax.php' ) ] );
+		}
+		if ( is_archive( 'du-an' ) ) {
 			Assets::css( 'archive-nha-dat', true );
 			Assets::js( 'orderby', [ 'jquery' ], [ 'ajaxURL' => admin_url( 'admin-ajax.php' ) ] );
 		}

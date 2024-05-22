@@ -21,6 +21,16 @@ jQuery( function ( $ ) {
 				$( '#districts_rent' ).html( response.data );
 			} );
 		} );
+		$( '#city_project' ).on( 'change', function () {
+			var city_project = $( this ).find( 'option:selected' ).attr( 'data-ip' );
+			var data = {
+				action: 'display_district_project',
+				city_project: city_project
+			};
+			$.post( filter.url, data ).done( function ( response ) {
+				$( '#districts_project' ).html( response.data );
+			} );
+		} );
 	}
 
 	// var $filterCheckboxes = $( 'input[type="checkbox"]' );

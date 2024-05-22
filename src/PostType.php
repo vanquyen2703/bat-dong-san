@@ -911,7 +911,59 @@ class PostType {
 		];
 		register_taxonomy( 'danh-muc-du-an', [ 'du-an' ], $args2 );
 
+
 		$labels3 = [ 
+			'name'                       => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
+			'singular_name'              => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
+			'menu_name'                  => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
+			'search_items'               => esc_html__( 'Search Quận/Huyện', 'bat-dong-san' ),
+			'popular_items'              => esc_html__( 'Popular Quận/Huyện', 'bat-dong-san' ),
+			'all_items'                  => esc_html__( 'All Quận/Huyện', 'bat-dong-san' ),
+			'parent_item'                => esc_html__( 'Parent Quận/Huyện', 'bat-dong-san' ),
+			'parent_item_colon'          => esc_html__( 'Parent Quận/Huyện:', 'bat-dong-san' ),
+			'edit_item'                  => esc_html__( 'Edit Quận/Huyện', 'bat-dong-san' ),
+			'view_item'                  => esc_html__( 'View Quận/Huyện', 'bat-dong-san' ),
+			'update_item'                => esc_html__( 'Update Quận/Huyện', 'bat-dong-san' ),
+			'add_new_item'               => esc_html__( 'Add New Quận/Huyện', 'bat-dong-san' ),
+			'new_item_name'              => esc_html__( 'New Quận/Huyện Name', 'bat-dong-san' ),
+			'separate_items_with_commas' => esc_html__( 'Separate Quận/Huyện with commas', 'bat-dong-san' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove Quận/Huyện', 'bat-dong-san' ),
+			'choose_from_most_used'      => esc_html__( 'Choose most used Quận/Huyện', 'bat-dong-san' ),
+			'not_found'                  => esc_html__( 'No Quận/Huyện found.', 'bat-dong-san' ),
+			'no_terms'                   => esc_html__( 'No Quận/Huyện', 'bat-dong-san' ),
+			'filter_by_item'             => esc_html__( 'Filter by Quận/Huyện', 'bat-dong-san' ),
+			'items_list_navigation'      => esc_html__( 'Quận/Huyện list pagination', 'bat-dong-san' ),
+			'items_list'                 => esc_html__( 'Quận/Huyện list', 'bat-dong-san' ),
+			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
+			'back_to_items'              => esc_html__( '&larr; Go to Quận/Huyện', 'bat-dong-san' ),
+		];
+		$args3   = [ 
+			'label'              => esc_html__( 'Quận/Huyện', 'bat-dong-san' ),
+			'labels'             => $labels3,
+			'description'        => '',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
+			'show_in_rest'       => true,
+			'show_tagcloud'      => true,
+			'show_in_quick_edit' => true,
+			'show_admin_column'  => true,
+			'query_var'          => true,
+			'sort'               => true,
+			'meta_box_cb'        => 'post_categories_meta_box',
+			'rest_base'          => '',
+			'rewrite'            => [ 
+				'with_front'   => false,
+				'hierarchical' => false,
+			],
+		];
+
+		register_taxonomy( 'dia-diem-du-an', [ 'du-an' ], $args3 );
+
+		$labels4 = [ 
 			'name'                       => esc_html__( 'Mức giá', 'bat-dong-san' ),
 			'singular_name'              => esc_html__( 'Mức giá', 'bat-dong-san' ),
 			'menu_name'                  => esc_html__( 'Mức giá', 'bat-dong-san' ),
@@ -936,9 +988,9 @@ class PostType {
 			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
 			'back_to_items'              => esc_html__( '&larr; Go to Mức giá', 'bat-dong-san' ),
 		];
-		$args3   = [ 
+		$args4   = [ 
 			'label'              => esc_html__( 'Mức giá', 'bat-dong-san' ),
-			'labels'             => $labels3,
+			'labels'             => $labels4,
 			'description'        => '',
 			'public'             => true,
 			'publicly_queryable' => true,
@@ -960,9 +1012,9 @@ class PostType {
 			],
 		];
 
-		register_taxonomy( 'muc-ga', [ 'du-an' ], $args3 );
+		register_taxonomy( 'muc-gia', [ 'du-an' ], $args4 );
 
-		$labels4 = [ 
+		$labels5 = [ 
 			'name'                       => esc_html__( 'Trạng thái', 'bat-dong-san' ),
 			'singular_name'              => esc_html__( 'Trạng thái', 'bat-dong-san' ),
 			'menu_name'                  => esc_html__( 'Trạng thái', 'bat-dong-san' ),
@@ -987,9 +1039,9 @@ class PostType {
 			'most_used'                  => esc_html__( 'Most Used', 'bat-dong-san' ),
 			'back_to_items'              => esc_html__( '&larr; Go to Trạng thái', 'bat-dong-san' ),
 		];
-		$args4   = [ 
+		$args5   = [ 
 			'label'              => esc_html__( 'Trạng thái', 'bat-dong-san' ),
-			'labels'             => $labels4,
+			'labels'             => $labels5,
 			'description'        => '',
 			'public'             => true,
 			'publicly_queryable' => true,
@@ -1011,7 +1063,7 @@ class PostType {
 			],
 		];
 
-		register_taxonomy( 'trang-thai', [ 'du-an' ], $args4 );
+		register_taxonomy( 'trang-thai', [ 'du-an' ], $args5 );
 	}
 
 }

@@ -1,0 +1,36 @@
+.error-404 {
+	position: relative;
+	padding: 90px 0;
+
+	.search-form {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+
+		input {
+			width: 90% !important;
+			padding: 11px 18px;
+		}
+
+		button {
+			width: 10%;
+			background-color: var(--color-main);
+
+			svg {
+				fill: #fff;
+
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+}
+
+.error-message {
+	h1 {
+		text-align: center;
+		font-family: var(--font-heading);
+		font-size: 52px;
+	}
+}
